@@ -10,12 +10,14 @@ function Game() {
   this.player;
 }
 
+module.exports = Game;
+
 Game.prototype.initializeGame = function () {
-  this.currentEnemy = this.enemies[0];
 
   this.enemies.push(new Enemy("goblin", "sword"));
   this.enemies.push(new Enemy("orc", "baseball bat"));
   this.enemies.push(new Enemy("skeleton", "axe"));
+  this.currentEnemy = this.enemies[0];
 
   inquirer
     .prompt({
@@ -32,4 +34,4 @@ Game.prototype.initializeGame = function () {
     });
 };
 
-module.exports = Game;
+
